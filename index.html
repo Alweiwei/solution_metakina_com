@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KINACHAIN - Leading blockchain, cryptocurrency and AI solutions provider for Southeast Asia and Latin America">
+    <link rel="canonical" href="https://kinachain.com">
+    <link rel="alternate" hreflang="en" href="https://kinachain.com/en">
+    <link rel="alternate" hreflang="es" href="https://kinachain.com/es">
+    <link rel="alternate" hreflang="pt" href="https://kinachain.com/pt">
+    <link rel="alternate" hreflang="id" href="https://kinachain.com/id">
+    <link rel="alternate" hreflang="th" href="https://kinachain.com/th">
+    <link rel="alternate" hreflang="vi" href="https://kinachain.com/vi">
+    <link rel="alternate" hreflang="ja" href="https://kinachain.com/ja">
+    <link rel="alternate" hreflang="ko" href="https://kinachain.com/ko">
+    <title>区块链科技 | 区块链、加密货币与AI综合解决方案</title>
+    <meta name="description" content="区块链、加密货币与AI综合解决方案提供商">
+    <link rel="alternate" hreflang="ja" href="/ja">
+    <link rel="alternate" hreflang="ko" href="/ko">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #06d6a0;
+            --warning: #ffbe0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--warning);
+        }
+        
+        .hero {
+            background: url('/api/placeholder/1200/600') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-top: 60px;
+        }
+        
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2a75e6;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .solutions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .solution-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .solution-content {
+            padding: 25px;
+        }
+        
+        .solution-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .solution-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .industries {
+            background: #f9f9f9;
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .industry-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .industry-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+        }
+        
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .case-study {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-study img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .case-content {
+            padding: 25px;
+        }
+        
+        .case-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .case-content .tag {
+            display: inline-block;
+            background: #eee;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .tech-item {
+            text-align: center;
+            width: 150px;
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+        }
+        
+        .tech-item h4 {
+            color: var(--dark);
+            font-size: 16px;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--warning);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--warning);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KINA<span>CHAIN</span></div>
+                <ul class="nav-links">
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#industries">行业应用</a></li>
+                    <li><a href="#cases">案例研究</a></li>
+                    <li><a href="#technology">技术实力</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                    <li>
+                        <select id="language-selector" onchange="changeLanguage(this.value)">
+                            <option value="zh">中文</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="pt">Português</option>
+                            <option value="id">Bahasa</option>
+                            <option value="th">ไทย</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>区块链、加密货币与AI<br>综合解决方案提供商</h1>
+            <p>为企业提供创新技术解决方案，助力数字化转型与业务增长</p>
+            <div class="hero-btns">
+                <a href="#solutions" class="btn">探索解决方案</a>
+                <a href="#contact" class="btn btn-outline">联系我们</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>我们的解决方案</h2>
+                <p>融合区块链、加密货币和人工智能技术，为您的业务创造实际价值</p>
+            </div>
+            <div class="solutions">
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="金融科技解决方案">
+                    <div class="solution-content">
+                        <h3>金融科技解决方案</h3>
+                        <p>数字资产交易系统、实物资产通证化平台与企业级DeFi服务，重塑金融服务体验。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="企业区块链解决方案">
+                    <div class="solution-content">
+                        <h3>企业区块链解决方案</h3>
+                        <p>供应链透明度系统、行业专用联盟链网络与企业数据完整性协作平台。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="技术基础设施服务">
+                    <div class="solution-content">
+                        <h3>技术基础设施服务</h3>
+                        <p>扩展性与互操作性解决方案、数字身份与访问管理系统，构建安全可靠的区块链基础设施。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="行业垂直解决方案">
+                    <div class="solution-content">
+                        <h3>行业垂直解决方案</h3>
+                        <p>金融服务转型、零售与电子商务、可持续发展ESG、数字内容与创意产业专属解决方案。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="AI与区块链协同系统">
+                    <div class="solution-content">
+                        <h3>AI与区块链协同系统</h3>
+                        <p>智能决策基础设施、隐私保护机器学习与新兴技术融合解决方案，开创创新技术创新前沿。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <img src="/api/placeholder/400/200" alt="咨询与实施服务">
+                    <div class="solution-content">
+                        <h3>咨询与实施服务</h3>
+                        <p>企业区块链转型战略咨询、定制解决方案开发与技术能力建设，全方位支持您的业务创新。</p>
+                        <a href="#" class="btn">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>行业应用</h2>
+                <p>我们的解决方案已成功应用于多个行业，为客户创造实际业务价值</p>
+            </div>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">F</div>
+                    <h3>金融服务</h3>
+                    <p>数字资产交易、支付现代化、财富管理</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">S</div>
+                    <h3>供应链</h3>
+                    <p>端到端追踪、产品真实性验证、供应链金融</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">H</div>
+                    <h3>医疗健康</h3>
+                    <p>患者数据共享、药品追踪、医疗保险索赔自动化</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">R</div>
+                    <h3>零售与电商</h3>
+                    <p>忠诚度系统、产品溯源、消费者参与</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">E</div>
+                    <h3>能源与可持续发展</h3>
+                    <p>碳信用交易、可再生能源证书、环境影响追踪</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">G</div>
+                    <h3>政府与公共服务</h3>
+                    <p>电子投票、公共记录管理、透明政府支出</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">C</div>
+                    <h3>创意产业</h3>
+                    <p>内容变现、IP保护、粉丝参与平台</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">M</div>
+                    <h3>制造业</h3>
+                    <p>供应链优化、产品追踪、设备维护管理</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2>成功案例</h2>
+                <p>我们帮助企业克服挑战，把握机遇，实现业务增长</p>
+            </div>
+            <div class="case-studies">
+                <div class="case-study">
+                    <img src="/api/placeholder/400/250" alt="金融机构资产通证化">
+                    <div class="case-content">
+                        <span class="tag">金融服务</span>
+                        <span class="tag">RWA通证化</span>
+                        <h3>某大型金融机构资产通证化平台</h3>
+                        <p>为中国领先金融机构打造的商业地产通证化平台，实现了资产分割、二级市场交易与自动化租金分配，提高资产流动性30%。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+                <div class="case-study">
+                    <img src="/api/placeholder/400/250" alt="奢侈品供应链追踪">
+                    <div class="case-content">
+                        <span class="tag">供应链</span>
+                        <span class="tag">产品验证</span>
+                        <h3>国际奢侈品牌供应链追踪系统</h3>
+                        <p>为全球知名奢侈品牌构建的区块链防伪与供应链追踪系统，通过AI视觉识别与区块链验证技术，成功降低假冒产品率达85%。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+                <div class="case-study">
+                    <img src="/api/placeholder/400/250" alt="能源交易平台">
+                    <div class="case-content">
+                        <span class="tag">可持续发展</span>
+                        <span class="tag">能源管理</span>
+                        <h3>分布式能源交易与碳信用平台</h3>
+                        <p>为亚太地区能源企业开发的可再生能源交易与碳信用管理平台，支持点对点能源交易，年交易量突破100亿元。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心技术</h2>
+                <p>我们掌握前沿技术，为客户提供创新解决方案</p>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <div class="tech-icon">B</div>
+                    <h4>区块链</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">D</div>
+                    <h4>DeFi</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">S</div>
+                    <h4>智能合约</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">A</div>
+                    <h4>人工智能</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Z</div>
+                    <h4>零知识证明</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">T</div>
+                    <h4>通证经济</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">I</div>
+                    <h4>物联网</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">C</div>
+                    <h4>云计算</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>准备开启您的区块链之旅？</h2>
+            <p>联系我们，了解如何将区块链、加密货币与AI技术应用到您的业务中，创造实际价值</p>
+            <a href="#" class="btn">预约咨询</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>解决方案</h3>
+                    <ul>
+                        <li><a href="#">金融科技解决方案</a></li>
+                        <li><a href="#">企业区块链解决方案</a></li>
+                        <li><a href="#">技术基础设施服务</a></li>
+                        <li><a href="#">行业垂直解决方案</a></li>
+                        <li><a href="#">AI与区块链协同系统</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>行业应用</h3>
+                    <ul>
+                        <li><a href="#">金融服务</a></li>
+                        <li><a href="#">供应链管理</a></li>
+                        <li><a href="#">医疗健康</a></li>
+                        <li><a href="#">零售与电商</a></li>
+                        <li><a href="#">能源与可持续发展</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>资源</h3>
+                    <ul>
+                        <li><a href="#">案例研究</a></li>
+                        <li><a href="#">白皮书</a></li>
+                        <li><a href="#">技术博客</a></li>
+                        <li><a href="#">行业报告</a></li>
+                        <li><a href="#">开发者文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>公司</h3>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">团队</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p>地址：北京市朝阳区望京SOHO</p>
+                    <p>电话：+86 10 8888 8888</p>
+                    <p>邮箱：info@blockchaintech.com</p>
+                    <div class="social-links">
+                        <a href="#">W</a>
+                        <a href="#">L</a>
+                        <a href="#">T</a>
+                        <a href="#">G</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KINACHAIN Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
