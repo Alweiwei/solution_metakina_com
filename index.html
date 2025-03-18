@@ -2,9 +2,16 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Metakina兼容EVM的区块链解决方案，提供高性能、安全可靠的区块链基础设施，满足从开发测试到企业级应用的全方位需求。">
+    <meta name="theme-color" content="#4a6cf7">
     <title>Metakina - 兼容EVM区块链解决方案 - 产品定价</title>
     <style>
+        /* 快速修复iOS触摸高亮问题 */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
         :root {
             --primary-color: #4a6cf7;
             --primary-dark: #3452e1;
@@ -373,6 +380,7 @@
             
             .pricing-card {
                 width: 100%;
+                margin-bottom: 30px;
             }
             
             .footer-links {
@@ -385,11 +393,47 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                padding: 0 15px;
             }
             
             h2 {
                 font-size: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .card-price {
+                font-size: 2rem;
+            }
+            
+            .card-subprice {
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .feature-item {
+                padding: 20px 15px;
+            }
+            
+            .contact-section p {
+                padding: 0 20px;
             }
         }
     </style>
@@ -527,8 +571,8 @@
     <section class="comparison-section">
         <div class="container">
             <h2>方案详细对比</h2>
-            <div style="overflow-x: auto;">
-                <table class="comparison-table">
+            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                <table class="comparison-table" style="min-width: 650px;">
                     <thead>
                         <tr>
                             <th>功能/服务</th>
@@ -667,8 +711,8 @@
     <section class="comparison-section">
         <div class="container">
             <h2>可选增值服务(所有版本均可选购)</h2>
-            <div style="overflow-x: auto;">
-                <table class="comparison-table">
+            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                <table class="comparison-table" style="min-width: 750px;">
                     <thead>
                         <tr>
                             <th>增值服务</th>
